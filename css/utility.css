@@ -1,0 +1,70 @@
+.border {
+    border: 2px solid red;
+}
+.flex {
+    display: flex;
+}
+.center-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sb-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.column-flex{ 
+    display: flex;
+    flex-direction: column;
+}
+.gap {
+    gap: 5px;
+}
+.padding-1 {
+    padding: 10px;
+}
+.padding-2 {
+    padding: 20px;
+}
+.padding-3 {
+    padding: 30px;
+}
+.bg-gray {
+    background: #b3b3b3;
+}
+.color-gray {
+    color: #b3b3b3;
+}
+.invert {
+    filter: invert(1);
+}
+.border-radius {
+    border-radius: 8px;
+}
+button {
+    cursor: pointer;
+}
+img {
+    cursor: pointer;
+}
+.cursor-pointer {
+    cursor: pointer;
+}
+svg {
+    cursor: pointer;
+    transition: 0.2s;
+    height: fit-content;
+}
+
+svg path {
+    transition: 0.2s;
+}
+
+svg:hover {
+    fill: #fff;
+}
+
+svg:hover path {
+    fill: #fff;
+}

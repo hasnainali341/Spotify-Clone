@@ -1,0 +1,940 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.25px;
+  scroll-behavior: smooth;
+  border: none;
+}
+
+body {
+  background: #000;
+  width: 100vw;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+::-webkit-scrollbar {
+  width: 0.8em;
+}
+
+.left .playlist:hover::-webkit-scrollbar-thumb,
+.right:hover::-webkit-scrollbar-thumb {
+  background-color: #b8b8b859;
+}
+
+
+.footer .link-sec>div p:not(:first-child) {
+  cursor: pointer;
+}
+
+.footer .link-sec>div p:not(:first-child):hover {
+  text-decoration: underline;
+}
+
+.footer .link-sec>div p:first-child {
+  cursor: default;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 32px;
+  height: 65px;
+  width: 100vw;
+  max-width: 1500px;
+  margin: auto;
+}
+
+#mobile-nav {
+  display: none;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.search.show .search-input {
+  display: block;
+  animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+.home-icon,
+.search-bar {
+  background-color: #282828;
+  padding: 12px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 9999px;
+  padding: 1em;
+}
+
+.search-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  font-weight: 600;
+  font-size: 1em;
+  width: 384px;
+  border-right: 2px solid #525252;
+  padding-right: 8px;
+  cursor: pointer;
+}
+
+.icon-size {
+  width: 24px;
+  height: 24px;
+}
+
+.auth-buttons {
+  color: #d6d6d6;
+  text-align: right;
+}
+
+.btn {
+  cursor: pointer;
+  width: 80px;
+  height: 40px;
+  font-weight: bold;
+  border-radius: 9999px;
+  transition: all 0.5s;
+  letter-spacing: 0.05em;
+  border: none;
+}
+
+.sign-up-button {
+  background: transparent;
+  color: inherit;
+}
+
+.sign-up-button:hover {
+  color: white;
+}
+
+.log-in-button {
+  background: white;
+  color: black;
+}
+
+.main {
+  display: flex;
+  gap: 0.25em;
+  color: white;
+  height: calc(100vh - 70px);
+  overflow: hidden;
+  width: 100%;
+  max-width: 1500px;
+  margin: auto;
+  position: relative;
+}
+
+.left,
+.right {
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+.left {
+  width: 25%;
+  background-color: #1a1a1a;
+  padding: 0.75em;
+  border-radius: 8px;
+  color: white;
+  position: relative;
+  left: 0;
+  z-index: 20;
+  overflow-y: scroll;
+}
+
+.left .nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.5em;
+}
+
+.left .library {
+  display: flex;
+  align-items: center;
+  gap: 0.75em;
+  font-weight: bold;
+  color: #a1a1a1;
+  font-size: 0.75em;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.left .library:hover,
+.left .library:hover svg {
+  color: #fff;
+  fill: #fff;
+}
+
+.left .add {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0.2em;
+  aspect-ratio: 1 / 1;
+  border-radius: 999px;
+  transition: all 0.5s;
+}
+
+.left .add:hover {
+  background-color: #3d3d3d;
+}
+
+.left .playlist {
+  margin-top: 1em;
+  height: 33%;
+  max-height: fit-content;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 0 0.5em;
+}
+
+.left .card {
+  background-color: #2b2b2b;
+  border-radius: 8px;
+  padding: 1em;
+}
+
+.left .card h2 {
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.left .card p {
+  margin-top: 0.5em;
+  font-size: 0.875em;
+}
+
+.left .card button {
+  background-color: white;
+  color: black;
+  padding: 0.5em 1em;
+  border-radius: 9999px;
+  font-weight: bold;
+  font-size: 0.75em;
+  margin-top: 1.25em;
+  transition: transform 0.3s;
+}
+
+.left .card button:hover {
+  transform: scale(1.05);
+}
+
+.left .footer {
+  margin-top: 3em;
+  font-size: 0.75em;
+  color: #a1a1a1;
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+}
+
+.left .footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75em;
+}
+
+.left .footer-links a {
+  color: inherit;
+  text-decoration: none;
+  font-size: 0.85em;
+}
+
+.left .footer-links a:hover {
+  text-decoration: underline;
+}
+
+.left .footer .language-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  border: 1px solid #a1a1a1;
+  padding: 0.4em 1em;
+  border-radius: 9999px;
+  font-weight: bold;
+  font-size: 0.75em;
+  width: fit-content;
+  background: transparent;
+  color: white;
+}
+
+.left .footer .language-btn:hover {
+  scale: 1.05;
+  border-color: white;
+}
+
+.right {
+  width: 75%;
+  background: linear-gradient(180deg, #1c1c1e, #080808);
+  color: white;
+  padding: 1em;
+  border-radius: 8px;
+  overflow-y: auto;
+  position: relative;
+  right: 0;
+}
+
+.sub-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  margin-bottom: 2em;
+}
+
+.heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.heading h2 {
+  font-size: 1.5em;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.heading p {
+  font-size: 0.875em;
+  cursor: pointer;
+}
+
+.heading h2:hover,
+.heading p:hover {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.albums-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  font-size-adjust: ex-height 0.5;
+}
+
+.right .card {
+  border-radius: 8px;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  width: 180px;
+  cursor: pointer;
+}
+
+.right .cards {
+  position: relative;
+  z-index: 99;
+}
+
+.play-svg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 15px;
+  top: 115px;
+  z-index: 10;
+  background-color: #00da6b;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  opacity: 0;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.cards:hover .play-svg {
+  opacity: 1;
+  bottom: 80px;
+}
+
+.play-svg:hover {
+  background-color: #00f576;
+  scale: 1.05;
+}
+
+.right .cards:hover {
+  background: linear-gradient(transparent, #19191a);
+}
+
+.card img {
+  border-radius: 8px;
+  width: 100%;
+}
+
+.name {
+  font-weight: bold;
+  margin-top: 1em;
+  text-transform: capitalize;
+}
+
+.title {
+  color: #b3b3b3;
+}
+
+.right .footer {
+  margin-bottom: 100px;
+}
+
+.right .footer .link-sec {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  border-bottom: 1px solid #a1a1a1;
+}
+
+.right .footer .link-sec span * {
+  display: block;
+  text-decoration: none;
+}
+
+.right .footer .link-sec span p {
+  font-weight: bold;
+}
+
+.right .footer .link-sec span a {
+  color: #b3b3b3;
+  font-size: 0.9em;
+  width: fit-content;
+}
+
+.right .footer .link-sec span a:hover {
+  text-decoration: 1px underline #b3b3b3;
+  text-underline-offset: 2px;
+  color: #fff;
+}
+
+.right .footer .social-links {
+  display: flex;
+  gap: 5px;
+}
+
+.right .footer .social-links span {
+  height: fit-content;
+  padding: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.right .footer .social-links span:hover {
+  background: #2b2b2b;
+}
+
+.copyright {
+  font-size: 0.8em;
+  color: #b3b3b3;
+  padding-top: 10px;
+}
+
+.right .playbar {
+  position: fixed;
+  bottom: 0;
+  z-index: 100;
+  width: calc(75% - 2.5em);
+  max-width: calc(1125px - 2.5em);
+  background: #3d3d3d;
+  border-radius: 10px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  padding: 0.5em;
+  opacity: 0;
+  transition: opacity 80ms;
+  text-transform: capitalize;
+  font-size: 1.15em;
+}
+
+.right .playbar.play {
+  opacity: 1;
+}
+
+.right .playbar .playbar-icons {
+  width: fit-content;
+  margin: auto;
+  pointer-events: none;
+  width: 33%;
+  text-align: center;
+}
+
+.right .playbar .playbar-icons span {
+  position: relative;
+  cursor: pointer;
+  pointer-events: visible;
+}
+
+.right .playbar span abbr,
+.right .playbar abbr {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #2b2b2b;
+  padding: 0.4em;
+  font-size: 0.75em;
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.right .playbar abbr {
+  font-size: 0.65em;
+  top: 30px;
+}
+
+.right .playbar .playbar-icons span:hover abbr,
+.right .playbar input:hover+abbr {
+  opacity: 1;
+}
+
+.right .playbar .playbar-icons span::selection {
+  background-color: #3d3d3d;
+}
+
+.right .playbar .playbar-icons abbr::selection {
+  background-color: #2d2d2d;
+}
+
+.right .playbar .top {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 1em;
+  font-size: 0.8em;
+}
+
+.right .playbar .top .song-name {
+  font-weight: 500;
+  text-align: left;
+  width: 33%;
+}
+
+.right .playbar .top .time {
+  text-align: right;
+  width: 33%;
+}
+
+.right .playbar #seekbar {
+  width: 95%;
+  accent-color: white;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.right .playbar .volume {
+  height: 32px;
+  width: 32px;
+  overflow: hidden;
+  transition: 0.5s;
+  position: relative;
+}
+
+.right .playbar .volume:hover {
+  width: 140px;
+  max-width: 1000px;
+}
+
+.right .playbar #volume {
+  accent-color: #00f576;
+  color: #fff;
+  width: 85px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+@media (min-width: 1768px) {
+  body {
+    font-size: 18px;
+  }
+  #logo {
+    height: 40px;
+  }
+
+  .home-svg {
+    height: 34px;
+  }
+
+  .search-bar svg {
+    height: 30px;
+  }
+
+  .search-input {
+    font-size: 1.2em;
+  }
+
+  .auth-buttons .btn {
+    width: 125px;
+    height: 70px;
+    font-size: 1.2em;
+  }
+
+  .left,
+  .left .footer {
+    font-size: 20px;
+  }
+
+  .left .footer .language-btn svg {
+    height: 20px;
+  }
+  .right .cards {
+    width: 210px;
+  }
+  .right .card img {
+    width: 210px;
+  }
+  .right .card p {
+    font-size: 1.2em;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  body {
+    font-size: 14px;
+  }
+
+  .left {
+    width: 35%;
+  }
+  .search-input {
+    width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+    overflow: hidden;
+  }
+
+  #mobile-nav {
+    display: block;
+    padding-right: 20px;
+  }
+
+  .header-nav {
+    justify-content: space-between;
+    padding: 8px 16px;
+  }
+
+  #logo {
+    height: 30px;
+  }
+
+  .search {
+    gap: 5px;
+    margin-left: auto;
+  }
+
+  .search-bar {
+    padding: 0;
+    background: transparent;
+  }
+
+  .home-svg,
+  #search-icon {
+    height: 24px;
+  }
+
+  .home-icon,
+  .search-input,
+  #browse {
+    display: none;
+  }
+
+  .btn {
+    font-size: 13px;
+    width: 80px;
+    height: 40px;
+  }
+
+  .left {
+    width: 70%;
+    left: -100%;
+    transition: 0.5s;
+    opacity: 1;
+    z-index: 102;
+  }
+
+  .left.show {
+    left: 0%;
+  }
+
+  .left .footer button {
+    margin-right: auto;
+  }
+
+  .right {
+    position: absolute;
+    width: 100%;
+    right: 0;
+  }
+
+  .right .albums-container {
+    justify-content: center;
+  }
+
+  .right .footer .social-links span:hover {
+    background: none;
+  }
+
+  .right .playbar {
+    width: 100vw;
+    margin: 0 -1em;
+  }
+
+  .playbar .volume {
+    display: none;
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .link-sec {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .link-sec span {
+    width: 100%;
+    margin-bottom: 10px;
+    flex-basis: 48%;
+    text-wrap: nowrap;
+  }
+
+  .link-sec p {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: left;
+  }
+
+  .link-sec a {
+    font-size: 14px;
+    display: block;
+    margin-bottom: 3px;
+  }
+
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 10px auto 0;
+  }
+
+  .social-links span {
+    width: fit-content;
+  }
+
+  .social-links svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .copyright {
+    font-size: 12px;
+    margin-top: 10px;
+  }
+}
+
+@media (min-width: 461px) and (max-width: 608px) {
+  .right {
+    left: 0;
+    width: 100%;
+  }
+
+  .right .albums-container {
+    justify-content: center;
+  }
+
+  .right .card {
+    padding: 1em;
+    width: 125px;
+  }
+
+  .right .card img {
+    width: 120px;
+  }
+
+  .play-svg {
+    width: 35px;
+    height: 35px;
+    top: 105px;
+    right: -15px;
+    opacity: 1;
+  }
+
+  .play-svg img {
+    width: 19px;
+    height: 19px;
+  }
+}
+
+@media (max-width: 460px) {
+  body {
+    font-size: 11px;
+  }
+
+  .header-nav {
+    justify-content: space-between;
+    padding: 8px 16px;
+  }
+
+  #mobile_nav_svg,
+  #logo {
+    height: 24px;
+  }
+
+  .search {
+    gap: 5px;
+    margin-left: auto;
+  }
+
+  .home-icon {
+    display: none;
+  }
+
+  .search-bar {
+    padding: 0;
+    background: transparent;
+  }
+
+  .home-svg,
+  #search-icon {
+    height: 22px;
+  }
+
+  .search-input,
+  #browse {
+    display: none;
+  }
+
+  .btn {
+    font-size: 11px;
+    width: 60px;
+    height: 30px;
+  }
+
+  .left {
+    left: -100%;
+  }
+
+  .right {
+    position: absolute;
+    width: 100%;
+    right: 0;
+  }
+
+  .right .albums-container {
+    gap: 0;
+  }
+
+  .cards {
+    margin: 0 auto;
+  }
+
+  .right .card {
+    padding: 1em;
+    width: 125px;
+  }
+
+  .right .card img {
+    width: 100px;
+  }
+
+  .play-svg {
+    width: 30px;
+    height: 30px;
+    top: 90px;
+    opacity: 1;
+  }
+
+  .play-svg img {
+    width: 15px;
+    height: 15px;
+  }
+
+  .playbar-icons img {
+    width: 18px;
+  }
+
+  .playbar-icons abbr {
+    top: 0;
+  }
+}
+
+@media (max-width: 280px) {
+  .right .cards {
+    width: 85px;
+  }
+
+  .right .card img {
+    width: 80px;
+  }
+
+  .right .play-svg {
+    width: 25px;
+    height: 25px;
+    top: 70px;
+    right: -15px;
+  }
+
+  .right .play-svg img {
+    width: 14px;
+  }
+
+  .playbar-icons img {
+    width: 15px;
+  }
+}
